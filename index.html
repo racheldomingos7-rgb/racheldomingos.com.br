@@ -9,9 +9,9 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--t:#3D1F1C;--b:#7C2342;--v:#1C3828;--a:#C8A882;--ow:#FAF5F0;--owd:#EDE8E2;--mid:#6B4030}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--t)}
+body{font-family:'DM Sans',sans-serif;background:var(--t);color:var(--t)}
 
-.nav{background:var(--t);padding:0 2.5rem;height:56px;display:flex;align-items:center;justify-content:space-between;position:fixed;top:0;left:0;right:0;z-index:100}
+.nav{background:var(--t);padding:0 2.5rem;height:56px;display:flex;align-items:center;justify-content:space-between;position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid rgba(200,168,130,.08)}
 .nav-brand{font-family:'Playfair Display',serif;font-size:1rem;color:var(--ow);letter-spacing:.03em;text-decoration:none}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,245,240,.45);text-decoration:none;transition:color .2s}
@@ -20,21 +20,20 @@ body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--t)}
 .nav-btn:hover{background:#9A2D55}
 
 .hero{background:var(--t);min-height:100vh;display:grid;grid-template-columns:1fr 380px;overflow:hidden;padding-top:56px}
-.hero-left{padding:4rem 3rem 4rem;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-left{padding:4rem 3rem;display:flex;flex-direction:column;justify-content:flex-end}
 .hero-tag{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--a);margin-bottom:1.25rem;display:flex;align-items:center;gap:.6rem}
 .hero-tag::before{content:'';width:20px;height:1px;background:var(--b);display:block}
 .hero-h1{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,7vw,5.5rem);font-weight:900;line-height:.9;color:var(--ow);margin-bottom:1.5rem}
 .hero-h1 em{font-style:italic;color:var(--a)}
-.hero-p{font-size:.9rem;font-weight:300;color:rgba(250,245,240,.55);line-height:1.85;max-width:440px;margin-bottom:2rem}
+.hero-p{font-size:.9rem;font-weight:300;color:rgba(250,245,240,.55);line-height:1.85;max-width:480px;margin-bottom:2rem}
 .hero-p strong{color:var(--ow);font-weight:500}
 .hero-btns{display:flex;gap:.75rem;flex-wrap:wrap}
 .btn-prim{background:var(--b);color:var(--ow);padding:.75rem 1.5rem;border-radius:2px;font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background .2s}
 .btn-prim:hover{background:#9A2D55}
 .btn-ghost{border:1px solid rgba(200,168,130,.3);color:var(--a);padding:.75rem 1.5rem;border-radius:2px;font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .2s}
 .btn-ghost:hover{border-color:var(--a);color:var(--ow)}
-.hero-right{background:#2a1410;display:flex;align-items:center;justify-content:center;border-left:1px solid rgba(200,168,130,.08);position:relative;overflow:hidden}
-/* Para adicionar sua foto: substitua o conteúdo de .hero-right por <img src="sua-foto.jpg" alt="Rachel Domingos" style="width:100%;height:100%;object-fit:cover;object-position:top"> */
-.photo-hint{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(200,168,130,.2);text-align:center;padding:1rem}
+.hero-right{background:#2a1410;position:relative;overflow:hidden}
+.hero-right img{width:100%;height:100%;object-fit:cover;object-position:top center}
 
 .sobre{display:grid;grid-template-columns:1fr 1.2fr}
 .sobre-l{background:var(--b);padding:5rem 3rem;display:flex;flex-direction:column;justify-content:center}
@@ -47,7 +46,6 @@ body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--t)}
 .prose{font-size:.9rem;font-weight:300;color:rgba(250,245,240,.6);line-height:1.9}
 .prose strong{color:var(--ow);font-weight:500}
 .prose.dk{color:var(--mid)}
-.prose.dk strong{color:var(--t)}
 .svc-list{margin-top:1.75rem;display:flex;flex-direction:column}
 .svc-item{padding:.9rem 0;border-bottom:1px solid rgba(61,31,28,.1);display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
 .svc-item:first-child{border-top:1px solid rgba(61,31,28,.1)}
@@ -63,6 +61,7 @@ body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--t)}
 .sh-title em{font-style:italic;color:var(--a)}
 .sh-sub{font-size:.85rem;font-weight:300;color:rgba(250,245,240,.4);max-width:500px;line-height:1.75}
 
+/* ANITTA HERO */
 .ahero{background:var(--t);padding:0 3rem 3rem}
 .ahero-inner{display:grid;grid-template-columns:1fr 1fr;background:#1e0d08;border-top:1px solid rgba(200,168,130,.08)}
 .ahl{padding:3rem}
@@ -74,25 +73,35 @@ body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--t)}
 .ahl-feats{margin-top:1.75rem;display:flex;flex-direction:column}
 .ahl-feat{padding:.7rem 0;border-bottom:1px solid rgba(200,168,130,.07);display:flex;gap:.75rem;align-items:baseline}
 .ahl-feat:first-child{border-top:1px solid rgba(200,168,130,.07)}
-.ahl-feat-lbl{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--a);opacity:.5;flex-shrink:0;padding-top:.1rem;width:48px}
+.ahl-feat-lbl{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--a);opacity:.5;flex-shrink:0;width:48px}
 .ahl-feat-txt{font-size:.78rem;color:rgba(250,245,240,.55);line-height:1.5}
 .ahr{background:#170a05;display:flex;flex-direction:column}
-.media-4{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;flex:1;gap:1px;background:rgba(200,168,130,.06);min-height:240px}
-/* Para adicionar imagens nos slots: <img src="foto.jpg" alt="" style="width:100%;height:100%;object-fit:cover"> dentro de cada .ms */
-.ms{background:#170a05;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;overflow:hidden}
-.ms-lb{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(200,168,130,.22);text-align:center;padding:0 .5rem}
 
+/* MEDIA GRIDS */
+.media-5{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr 1fr;flex:1;gap:1px;background:rgba(200,168,130,.06);min-height:280px}
+.media-5 .ms:first-child{grid-column:1/-1}
+.media-4{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;flex:1;gap:1px;background:rgba(200,168,130,.06);min-height:240px}
+.media-2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(200,168,130,.06);min-height:180px}
+.media-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(200,168,130,.06);min-height:180px}
+.ms{background:#170a05;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.ms img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.ms iframe{width:100%;height:100%;position:absolute;inset:0;border:none}
+.ms-lb{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(200,168,130,.22);text-align:center;padding:0 .5rem;position:relative;z-index:1}
+
+/* CASES GRID */
 .cw{background:var(--t);padding:0 3rem 3rem}
 .cat-lbl{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(200,168,130,.3);display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-top:.5rem}
 .cat-lbl::after{content:'';flex:1;height:1px;background:rgba(200,168,130,.07)}
 .cg3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(200,168,130,.07);margin-bottom:.75rem}
 .cg3:last-child{margin-bottom:0}
 .cc{background:#1e0d08;display:flex;flex-direction:column}
-.cc-media{display:grid;aspect-ratio:16/9;gap:1px;background:rgba(200,168,130,.07)}
+.cc-media{display:grid;aspect-ratio:16/9;gap:1px;background:rgba(200,168,130,.07);overflow:hidden;position:relative}
 .cc-media.s2{grid-template-columns:1fr 1fr}
 .cc-media.s3{grid-template-columns:1fr 1fr 1fr}
-.mm{background:#170a05;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.mm-lb{font-size:.52rem;letter-spacing:.05em;text-transform:uppercase;color:rgba(200,168,130,.18);text-align:center;padding:0 .25rem}
+.mm{background:#170a05;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.mm img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.mm iframe{width:100%;height:100%;position:absolute;inset:0;border:none;pointer-events:none}
+.mm-lb{font-size:.52rem;letter-spacing:.05em;text-transform:uppercase;color:rgba(200,168,130,.18);text-align:center;padding:0 .25rem;position:relative;z-index:1}
 .cc-body{padding:1.5rem;flex:1}
 .cc-ag{font-size:.58rem;letter-spacing:.09em;text-transform:uppercase;color:rgba(200,168,130,.35);margin-bottom:.25rem}
 .cc-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--ow);margin-bottom:.2rem;line-height:1.05}
@@ -102,8 +111,9 @@ body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--t)}
 .cc-ul li:last-child{border-bottom:none}
 .cc-ul li::before{content:'–';position:absolute;left:0;color:rgba(200,168,130,.3);font-size:.68rem}
 
+/* NEGÓCIOS */
 .pq-wrap{background:var(--v);padding:0 3rem 4rem}
-.pqc{display:grid;grid-template-columns:1fr 1.5fr;border-bottom:1px solid rgba(200,168,130,.08);padding:2.5rem 0}
+.pqc{display:grid;grid-template-columns:1fr 1.5fr;border-bottom:1px solid rgba(200,168,130,.08);padding:2.5rem 0;gap:2rem;align-items:start}
 .pqc:first-child{padding-top:0}
 .pqc:last-child{border-bottom:none}
 .pql-ag{font-size:.58rem;letter-spacing:.09em;text-transform:uppercase;color:rgba(200,168,130,.38);margin-bottom:.3rem}
@@ -113,17 +123,20 @@ body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--t)}
 .pql-ul li{font-size:.78rem;color:rgba(250,245,240,.48);padding:.4rem 0;border-bottom:1px solid rgba(200,168,130,.07);padding-left:.8rem;position:relative;line-height:1.45}
 .pql-ul li:last-child{border-bottom:none}
 .pql-ul li::before{content:'–';position:absolute;left:0;color:rgba(200,168,130,.3);font-size:.68rem}
-.pqr{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(200,168,130,.07);align-self:stretch}
-/* Para adicionar imagens: <img src="foto.jpg" alt="" style="width:100%;height:100%;object-fit:cover"> dentro de cada .pqm */
-.pqm{background:rgba(200,168,130,.03);display:flex;align-items:center;justify-content:center;min-height:100px;overflow:hidden}
-.pqm-lb{font-size:.52rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(200,168,130,.18)}
+.pqr{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(200,168,130,.07)}
+.pqr.s4{grid-template-rows:1fr 1fr}
+.pqm{background:rgba(200,168,130,.03);display:flex;align-items:center;justify-content:center;min-height:120px;overflow:hidden;position:relative}
+.pqm img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.pqm iframe{width:100%;height:100%;position:absolute;inset:0;border:none;pointer-events:none}
+.pqm-lb{font-size:.52rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(200,168,130,.18);position:relative;z-index:1}
 
+/* CTA */
 .cta{background:var(--b);padding:5rem 3rem;display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:center}
 .cta-h{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;color:var(--ow);line-height:1;margin-bottom:.85rem}
 .cta-h em{font-style:italic;color:var(--a)}
 .cta-p{font-size:.88rem;font-weight:300;color:rgba(250,245,240,.5);line-height:1.8;margin-bottom:1.75rem}
 .cl{display:flex;flex-direction:column}
-.ci{display:flex;align-items:baseline;gap:.75rem;padding:.85rem 0;border-bottom:1px solid rgba(250,245,240,.08);text-decoration:none;transition:color .15s}
+.ci{display:flex;align-items:baseline;gap:.75rem;padding:.85rem 0;border-bottom:1px solid rgba(250,245,240,.08);text-decoration:none}
 .ci:first-child{border-top:1px solid rgba(250,245,240,.08)}
 .ci:hover .ci-v{color:var(--a)}
 .ci-l{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,245,240,.28);flex-shrink:0;width:72px}
@@ -133,32 +146,14 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
 .ft-brand{font-family:'Playfair Display',serif;font-size:.85rem;color:rgba(250,245,240,.25)}
 .ft-copy{font-size:.65rem;color:rgba(250,245,240,.15)}
 
-/* COMO ADICIONAR MÍDIA — leia antes de publicar */
-/*
-  FOTO DO HERO:
-  Dentro de .hero-right, substitua o span.photo-hint por:
-  <img src="rachel.jpg" alt="Rachel Domingos" style="width:100%;height:100%;object-fit:cover;object-position:top center">
-
-  SLOTS DE IMAGEM (cases):
-  Cada .ms, .mm e .pqm é um slot. Para adicionar uma imagem, coloque dentro:
-  <img src="foto.jpg" alt="" style="width:100%;height:100%;object-fit:cover">
-
-  COMO PUBLICAR GRÁTIS:
-  1. Coloque este arquivo HTML e todas as suas imagens numa pasta
-  2. Acesse netlify.com/drop
-  3. Arraste a pasta inteira
-  4. Pronto — você tem um link público em 30 segundos
-*/
-
 @media(max-width:900px){
   .nav{padding:0 1.25rem}
   .nav-links{display:none}
   .hero,.sobre,.ahero-inner,.cta{grid-template-columns:1fr}
-  .hero-right{display:none}
+  .hero-right{height:60vw}
   .hero-left,.sobre-l,.sobre-r,.sh,.ahl,.cw,.pq-wrap,.ahero,.cta{padding-left:1.25rem;padding-right:1.25rem}
   .cg3{grid-template-columns:1fr}
   .pqc{grid-template-columns:1fr}
-  .pqr{grid-template-columns:repeat(4,1fr)}
   footer{padding:1rem 1.25rem}
 }
 </style>
@@ -180,43 +175,41 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
   <div class="hero-left">
     <p class="hero-tag">Estratégia de Conteúdo · Rio de Janeiro</p>
     <h1 class="hero-h1">Rachel<br><em>Domingos</em></h1>
-    <p class="hero-p">Eu ajudo quem tá perdido no digital a <strong>transformar conteúdo em venda.</strong> Formada desde 2017. Mais de 8 anos no mercado. De Anitta a hotéis da rede Ibis.</p>
+    <p class="hero-p">Ajudo pequenas empresas e empreendedores a se destacarem através do marketing de conteúdo. <strong>Formada em Marketing há 10 anos, 8 anos no mercado,</strong> com atendimento de grandes empresas e artistas.</p>
     <div class="hero-btns">
       <a href="#artistas" class="btn-prim">Ver portfólio</a>
       <a href="#contato" class="btn-ghost">Falar comigo</a>
     </div>
   </div>
   <div class="hero-right">
-    <!-- SUBSTITUA PELO CÓDIGO ABAIXO QUANDO TIVER A FOTO:
-    <img src="rachel.jpg" alt="Rachel Domingos" style="width:100%;height:100%;object-fit:cover;object-position:top center">
-    -->
-    <span class="photo-hint">sua foto aqui</span>
+    <img src="rachel-hero.png" alt="Rachel Domingos">
   </div>
 </section>
 
 <section class="sobre" id="sobre">
   <div class="sobre-l">
     <p class="eyebrow">Quem é Rachel</p>
-    <h2 class="h2s">Estrategista.<br><em>Não só mais<br>uma social media.</em></h2>
-    <p class="prose">Trabalhar com os maiores artistas do Brasil me ensinou uma coisa que nenhuma agência ensina: <strong>conteúdo sem estratégia é só barulho.</strong><br><br>Hoje aplico essa visão para marcas que querem parar de postar no escuro e ver resultado de verdade.</p>
+    <h2 class="h2s">Estrategista de<br><em>Conteúdo Digital</em></h2>
+    <p class="prose">Trabalhar com os maiores artistas do Brasil me ensinou que conteúdo sem estratégia é só barulho. Hoje aplico essa visão para marcas que querem parar de postar por postar.</p>
   </div>
   <div class="sobre-r">
     <p class="eyebrow" style="color:var(--b)">O que eu entrego</p>
     <h2 class="h2s dk">Direção,<br>não só execução.</h2>
-    <p class="prose dk">Da estratégia ao conteúdo — você para de adivinhar o que postar e começa a vender.</p>
+    <p class="prose dk">Da estratégia ao conteúdo, você para de adivinhar o que postar e começa a construir uma presença digital de verdade.</p>
     <div class="svc-list">
       <div class="svc-item"><span class="svc-name">Consultoria de Conteúdo</span><span class="svc-desc">Diagnóstico e plano de ação</span></div>
       <div class="svc-item"><span class="svc-name">Gestão de Redes Sociais</span><span class="svc-desc">Planejamento e execução completa</span></div>
-      <div class="svc-item"><span class="svc-name">Roteiros para Vídeo</span><span class="svc-desc">Hook forte e CTA que converte</span></div>
+      <div class="svc-item"><span class="svc-name">Roteiros para Vídeo</span><span class="svc-desc">Conteúdo com começo, meio e fim</span></div>
+      <div class="svc-item"><span class="svc-name">Captação de Conteúdo</span><span class="svc-desc">Produção e cobertura de eventos</span></div>
       <div class="svc-item"><span class="svc-name">Calendário Editorial</span><span class="svc-desc">O que, quando e por que postar</span></div>
     </div>
   </div>
 </section>
 
 <div class="sh dk" id="artistas">
-  <p class="sh-eye">Portfólio — Entretenimento & Artistas</p>
+  <p class="sh-eye">Portfólio, Entretenimento e Artistas</p>
   <h2 class="sh-title">Trabalhos que <em>fizeram história</em></h2>
-  <p class="sh-sub">De lançamentos de álbuns a ações em cinemas — estratégia de conteúdo no mais alto nível do entretenimento brasileiro.</p>
+  <p class="sh-sub">De lançamentos de álbuns a coberturas ao vivo, estratégia de conteúdo nos maiores projetos do entretenimento brasileiro.</p>
 </div>
 
 <div class="ahero">
@@ -224,20 +217,22 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
     <div class="ahl">
       <p class="ahl-ag">Agência Squad Media</p>
       <h3 class="ahl-name">Anitta</h3>
-      <p class="ahl-period">2021 – 2024 · Anitta & QG da Anitta</p>
+      <p class="ahl-period">2021 – 2024, Anitta e QG da Anitta</p>
       <p class="ahl-desc">Planejamento de lançamentos, gestão das mídias e roteiros para conteúdo. <strong>Presente nos lançamentos de Versions of Me, Funk Generation e À Procura da Anitta Perfeita.</strong> Atendimento à equipe da cantora, criação de roteiros e planejamento de cronogramas orgânicos e publis.</p>
       <div class="ahl-feats">
-        <div class="ahl-feat"><span class="ahl-feat-lbl">Ação</span><span class="ahl-feat-txt">Pré-estreia "Boys Don't Cry" no cinema do RJ — sessão exclusiva para fãs com presença da cantora</span></div>
-        <div class="ahl-feat"><span class="ahl-feat-lbl">Ação</span><span class="ahl-feat-txt">Dance video de Funk Generation com influenciadores — coordenação da recepção e execução no local</span></div>
+        <div class="ahl-feat"><span class="ahl-feat-lbl">Ação</span><span class="ahl-feat-txt">Pré-estreia do clipe "Boys Don't Cry" no cinema do RJ, sessão exclusiva para fãs</span></div>
+        <div class="ahl-feat"><span class="ahl-feat-lbl">Ação</span><span class="ahl-feat-txt">Pré-estreia de Funk Generation: A Favela Love Story no cinema do RJ, com presença da cantora</span></div>
+        <div class="ahl-feat"><span class="ahl-feat-lbl">Ação</span><span class="ahl-feat-txt">Dance video de Funk Generation com influenciadores, coordenação da recepção e execução no local</span></div>
         <div class="ahl-feat"><span class="ahl-feat-lbl">Roteiro</span><span class="ahl-feat-txt">Teaser de Versions of Me e versão brasileira do teaser de Funk Generation</span></div>
       </div>
     </div>
     <div class="ahr">
-      <div class="media-4">
-        <div class="ms"><!-- <img src="anitta-1.jpg" alt=""> --><span class="ms-lb">Boys Don't Cry</span></div>
-        <div class="ms"><!-- <img src="anitta-2.jpg" alt=""> --><span class="ms-lb">Funk Generation</span></div>
-        <div class="ms"><!-- <img src="anitta-3.jpg" alt=""> --><span class="ms-lb">Versions of Me</span></div>
-        <div class="ms"><!-- <img src="anitta-4.jpg" alt=""> --><span class="ms-lb">Dance video</span></div>
+      <div class="media-5">
+        <div class="ms"><img src="anitta1.jpg" alt="Anitta pré-estreia Funk Generation"></div>
+        <div class="ms"><img src="anitta2.jpg" alt="Anitta Funk Generation"></div>
+        <div class="ms"><img src="anitta3.jpg" alt="Anitta Boys Don't Cry"></div>
+        <div class="ms"><img src="anitta4.jpg" alt="Anitta LinkedIn"></div>
+        <div class="ms"><img src="anitta5.jpg" alt="Anitta Puzzy"></div>
       </div>
     </div>
   </div>
@@ -248,17 +243,22 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
   <div class="cg3">
     <div class="cc">
       <div class="cc-media s3">
-        <div class="mm"><!-- <img src="juliette-1.jpg" alt=""> --><span class="mm-lb">Conteúdo</span></div>
-        <div class="mm"><!-- <img src="juliette-2.jpg" alt=""> --><span class="mm-lb">Conteúdo</span></div>
-        <div class="mm"><!-- <img src="hq-ciclone.jpg" alt=""> --><span class="mm-lb">HQ Ciclone</span></div>
+        <div class="mm"><img src="Juliette.jpg" alt="HQ Ciclone"></div>
+        <div class="mm">
+          <iframe src="https://www.youtube.com/embed/nrSbB5NZ-yA" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="mm">
+          <iframe src="https://www.youtube.com/embed/sgeeDSU9CJs" allowfullscreen loading="lazy"></iframe>
+        </div>
       </div>
       <div class="cc-body">
         <p class="cc-ag">Agência Squad Media</p>
         <h3 class="cc-name">Juliette</h3>
-        <p class="cc-period">2023–2024 · Juliette, Juliette Makeup & Acesso Juliette</p>
+        <p class="cc-period">2023–2024, Juliette, Juliette Makeup e Acesso Juliette</p>
         <ul class="cc-ul">
-          <li>Álbum Ciclone + HQ na Bienal do RJ</li>
-          <li>Pré-estreia "Sai da Frente" com a artista</li>
+          <li>Álbum Ciclone, incluindo HQ distribuída na Bienal do RJ</li>
+          <li>Pré-estreia "Sai da Frente" com presença da artista no RJ</li>
+          <li>Captação de vídeos para as redes sociais</li>
           <li>Gravação de "Vida Boa" com Davi Carreira</li>
           <li>São Juão 2024</li>
         </ul>
@@ -266,14 +266,14 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
     </div>
     <div class="cc">
       <div class="cc-media s3">
-        <div class="mm"><!-- <img src="iza-1.jpg" alt=""> --><span class="mm-lb">Conteúdo</span></div>
-        <div class="mm"><!-- <img src="iza-2.jpg" alt=""> --><span class="mm-lb">Conteúdo</span></div>
-        <div class="mm"><!-- <img src="iza-lambelambe.jpg" alt=""> --><span class="mm-lb">Lambe-lambe</span></div>
+        <div class="mm"><img src="iza1.jpg" alt="IZA Sem Filtro"></div>
+        <div class="mm"><img src="iza2.jpg" alt="IZA TikTok"></div>
+        <div class="mm"><img src="iza3.jpg" alt="IZA Lambe-lambe Fé"></div>
       </div>
       <div class="cc-body">
         <p class="cc-ag">Agência Squad Media</p>
         <h3 class="cc-name">IZA</h3>
-        <p class="cc-period">2021–2022 · IZA & Central de Fãs</p>
+        <p class="cc-period">2021–2022, IZA e Central de Fãs</p>
         <ul class="cc-ul">
           <li>Criação da Central de Fãs oficial</li>
           <li>Lançamentos: Gueto, Sem Filtro e Fé</li>
@@ -283,15 +283,15 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
     </div>
     <div class="cc">
       <div class="cc-media s2">
-        <div class="mm"><!-- <img src="claudia-1.jpg" alt=""> --><span class="mm-lb">Conteúdo</span></div>
-        <div class="mm"><!-- <img src="claudia-2.jpg" alt=""> --><span class="mm-lb">Conteúdo</span></div>
+        <div class="mm"><img src="claudialeite1.jpg" alt="Claudia Leitte Reels"></div>
+        <div class="mm"><img src="claudialeite2.jpg" alt="Claudia Leitte Intemporal"></div>
       </div>
       <div class="cc-body">
         <p class="cc-ag">Agência Squad Media</p>
         <h3 class="cc-name">Claudia Leitte</h3>
-        <p class="cc-period">2024 · Claudia Leitte & Central de Fãs</p>
+        <p class="cc-period">2024, Claudia Leitte e Central de Fãs</p>
         <ul class="cc-ul">
-          <li>Estratégia, roteiros e relatórios mensais</li>
+          <li>Estratégia de conteúdo, roteiros e relatórios mensais</li>
           <li>Planejamento de lançamentos e publis</li>
           <li>Projeto Intemporal</li>
         </ul>
@@ -301,46 +301,53 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
   <div class="cg3">
     <div class="cc">
       <div class="cc-media s2">
-        <div class="mm"><!-- <img src="maneva-show.jpg" alt=""> --><span class="mm-lb">Universo Spanta</span></div>
-        <div class="mm"><!-- <img src="maneva-2.jpg" alt=""> --><span class="mm-lb">Conteúdo</span></div>
+        <div class="mm">
+          <iframe src="https://www.youtube.com/embed/DcXlw-nkeXc" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="mm">
+          <iframe src="https://www.youtube.com/embed/hhgkyPYP9HE" allowfullscreen loading="lazy"></iframe>
+        </div>
       </div>
       <div class="cc-body">
         <p class="cc-ag">Agência Squad Media</p>
         <h3 class="cc-name">Maneva</h3>
         <p class="cc-period">2023–2024</p>
         <ul class="cc-ul">
-          <li>Planejamento de lançamentos e relatórios</li>
-          <li>Cobertura ao vivo — Festival Universo Spanta, RJ</li>
+          <li>Planejamento de lançamentos e relatórios mensais</li>
+          <li>Captação de vídeos para as redes sociais</li>
+          <li>Cobertura ao vivo no Festival Universo Spanta, RJ</li>
         </ul>
       </div>
     </div>
     <div class="cc">
       <div class="cc-media s2">
-        <div class="mm"><!-- <img src="livenation-1.jpg" alt=""> --><span class="mm-lb">Caetano & Bethânia</span></div>
-        <div class="mm"><!-- <img src="livenation-2.jpg" alt=""> --><span class="mm-lb">Bruno Mars</span></div>
+        <div class="mm"><img src="live1.jpg" alt="Live Nation Caetano"></div>
+        <div class="mm"><img src="live2.jpg" alt="Live Nation Bruno Mars"></div>
       </div>
       <div class="cc-body">
         <p class="cc-ag">Live Nation Brasil</p>
         <h3 class="cc-name">Live Nation Brasil</h3>
-        <p class="cc-period">Mar–Mai 2024 · Community Manager</p>
+        <p class="cc-period">Mar–Mai 2024, Gestão de Comunidade</p>
         <ul class="cc-ul">
-          <li>Monitoramento e interações nos canais</li>
-          <li>Shows de Caetano & Bethânia e Bruno Mars</li>
+          <li>Monitoramento e interações nos canais da marca</li>
+          <li>Shows de Caetano e Bethânia e Bruno Mars</li>
         </ul>
       </div>
     </div>
     <div class="cc">
       <div class="cc-media s2">
-        <div class="mm"><!-- <img src="warner-1.jpg" alt=""> --><span class="mm-lb">Música Nova</span></div>
-        <div class="mm"><!-- <img src="warner-2.jpg" alt=""> --><span class="mm-lb">YouTube</span></div>
+        <div class="mm"><img src="warner1.png" alt="Warner Música Nova"></div>
+        <div class="mm">
+          <iframe src="https://www.youtube.com/embed/VhQ2OUPz7uM" allowfullscreen loading="lazy"></iframe>
+        </div>
       </div>
       <div class="cc-body">
         <p class="cc-ag">Agência Squad Media</p>
         <h3 class="cc-name">Warner Music BR</h3>
-        <p class="cc-period">2021 · Quadro Música Nova</p>
+        <p class="cc-period">2021, Quadro Música Nova</p>
         <ul class="cc-ul">
-          <li>Roteiros para 15 episódios</li>
-          <li>Direcionamento de edição</li>
+          <li>Roteiros para 15 episódios do quadro Música Nova</li>
+          <li>Direcionamento de edição de cada episódio</li>
         </ul>
       </div>
     </div>
@@ -348,64 +355,84 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
 </div>
 
 <div class="sh gn" id="negocios">
-  <p class="sh-eye">Portfólio — Marcas & Negócios</p>
-  <h2 class="sh-title">Estratégia que <em>vende de verdade</em></h2>
-  <p class="sh-sub">Da rede hoteleira ao negócio local — mesma metodologia, resultado concreto.</p>
+  <p class="sh-eye">Portfólio, Marcas e Negócios</p>
+  <h2 class="sh-title">Estratégia para <em>marcas que crescem</em></h2>
+  <p class="sh-sub">Da rede hoteleira ao negócio local, a mesma dedicação e metodologia em cada projeto.</p>
 </div>
 
 <div class="pq-wrap">
   <div class="pqc">
     <div>
       <p class="pql-ag">Prosperitas Consultoria</p>
-      <h3 class="pql-name">Rede Ibis & Hotéis</h3>
-      <p class="pql-period">Hospitalidade & Turismo</p>
+      <h3 class="pql-name">Rede de Hotéis Ibis</h3>
+      <p class="pql-period">Curitiba, Joinville, Parauapebas e mais</p>
       <ul class="pql-ul">
         <li>Estratégia de conteúdo para rede hoteleira nacional</li>
         <li>Planejamento e produção para redes sociais</li>
-        <li>Calendário editorial alinhado à sazonalidade</li>
+        <li>Calendário editorial alinhado à sazonalidade do setor</li>
       </ul>
     </div>
-    <div class="pqr">
-      <div class="pqm"><!-- <img src="ibis-1.jpg" alt=""> --><span class="pqm-lb">Print</span></div>
-      <div class="pqm"><!-- <img src="ibis-2.jpg" alt=""> --><span class="pqm-lb">Print</span></div>
-      <div class="pqm"><!-- <img src="ibis-3.jpg" alt=""> --><span class="pqm-lb">Print</span></div>
-      <div class="pqm"><!-- <img src="ibis-4.jpg" alt=""> --><span class="pqm-lb">Resultado</span></div>
+    <div class="pqr s4">
+      <div class="pqm"><img src="ibis1.png" alt="Ibis Vai voar cedo"></div>
+      <div class="pqm"><img src="ibis2.png" alt="Ibis Boa viagem"></div>
+      <div class="pqm">
+        <iframe src="https://www.youtube.com/embed/rJ40ekISQZY" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="pqm">
+        <iframe src="https://www.youtube.com/embed/ZZoAJHrklfk" allowfullscreen loading="lazy"></iframe>
+      </div>
     </div>
   </div>
   <div class="pqc">
     <div>
-      <p class="pql-ag">Agência própria</p>
-      <h3 class="pql-name">Estação Indoor</h3>
-      <p class="pql-period">Em andamento</p>
+      <p class="pql-ag">Agência Estação Indoor</p>
+      <h3 class="pql-name">HQZ Nails</h3>
+      <p class="pql-period">Marca e distribuidora</p>
       <ul class="pql-ul">
-        <li>Gestão completa de redes sociais</li>
+        <li>Estratégia de conteúdo para a marca e distribuidora</li>
+        <li>Roteiros para vídeo e gestão de mídias sociais</li>
         <li>Planejamento editorial mensal</li>
-        <li>Roteiros para Reels</li>
       </ul>
     </div>
     <div class="pqr">
-      <div class="pqm"><!-- <img src="estacao-1.jpg" alt=""> --><span class="pqm-lb">Print</span></div>
-      <div class="pqm"><!-- <img src="estacao-2.jpg" alt=""> --><span class="pqm-lb">Print</span></div>
-      <div class="pqm"><!-- <img src="estacao-3.jpg" alt=""> --><span class="pqm-lb">Print</span></div>
-      <div class="pqm"><!-- <img src="estacao-4.jpg" alt=""> --><span class="pqm-lb">Print</span></div>
+      <div class="pqm"><img src="hqz.png" alt="HQZ Nails"></div>
+      <div class="pqm">
+        <iframe src="https://www.youtube.com/embed/MM5CDlWrXW8" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="pqc">
+    <div>
+      <p class="pql-ag">Agência Criei</p>
+      <h3 class="pql-name">José Pugas</h3>
+      <ul class="pql-ul">
+        <li>Estratégia de conteúdo e roteiros para vídeo</li>
+        <li>Gestão de redes sociais</li>
+      </ul>
+    </div>
+    <div class="pqr">
+      <div class="pqm"><img src="jose.png" alt="José Pugas"></div>
+      <div class="pqm">
+        <iframe src="https://www.youtube.com/embed/wwX4ML5Nzzk" allowfullscreen loading="lazy"></iframe>
+      </div>
     </div>
   </div>
   <div class="pqc">
     <div>
       <p class="pql-ag">Freelancer</p>
       <h3 class="pql-name">Instituto Crispi</h3>
-      <p class="pql-period">2023 · Saúde feminina</p>
+      <p class="pql-period">2023, Saúde feminina</p>
       <ul class="pql-ul">
         <li>Estrategista de conteúdo por 6 meses</li>
-        <li>Cronogramas sobre endometriose</li>
+        <li>Cronogramas sobre endometriose e saúde feminina</li>
         <li>Pauta educativa com linguagem acessível</li>
       </ul>
     </div>
-    <div class="pqr">
-      <div class="pqm"><!-- <img src="crispi-1.jpg" alt=""> --><span class="pqm-lb">Print</span></div>
-      <div class="pqm"><!-- <img src="crispi-2.jpg" alt=""> --><span class="pqm-lb">Print</span></div>
-      <div class="pqm"><!-- <img src="crispi-3.jpg" alt=""> --><span class="pqm-lb">Print</span></div>
-      <div class="pqm"><!-- <img src="crispi-4.jpg" alt=""> --><span class="pqm-lb">Resultado</span></div>
+    <div class="pqr s4">
+      <div class="pqm"><img src="crispi1.png" alt="Instituto Crispi grid"></div>
+      <div class="pqm"><img src="crispi2.png" alt="Instituto Crispi O corpo fala"></div>
+      <div class="pqm"><img src="crispi3.png" alt="Instituto Crispi endometriose peso"></div>
+      <div class="pqm"><span class="pqm-lb"></span></div>
     </div>
   </div>
 </div>
@@ -414,8 +441,8 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
   <div>
     <p class="eyebrow" style="color:rgba(200,168,130,.5)">Bora trabalhar juntos</p>
     <h2 class="cta-h">Traz os jobs.<br><em>Vamos nessa.</em></h2>
-    <p class="cta-p">Se você quer parar de postar no escuro e começar a ver resultado de verdade — me chama. Vamos conversar sobre o que faz sentido pro seu negócio.</p>
-    <a href="https://wa.me/5521975903026" class="btn-prim">Falar no WhatsApp →</a>
+    <p class="cta-p">Se você quer parar de postar por postar e construir uma presença digital de verdade, me chama. Vamos conversar sobre o que faz sentido pro seu negócio.</p>
+    <a href="https://wa.me/5521975903026" class="btn-prim">Falar no WhatsApp</a>
   </div>
   <div class="cl">
     <a href="https://wa.me/5521975903026" class="ci"><span class="ci-l">WhatsApp</span><span class="ci-v">(21) 97590-3026</span></a>
@@ -427,7 +454,7 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
 
 <footer>
   <span class="ft-brand">Rachel Domingos</span>
-  <span class="ft-copy">© 2025 · Estratégia de Conteúdo & Social Media</span>
+  <span class="ft-copy">© 2025, Estratégia de Conteúdo e Social Media</span>
 </footer>
 
 </body>
