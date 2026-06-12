@@ -25,7 +25,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--t);color:var(--t)}
 .btn-prim:hover{background:#9A2D55}
 .btn-ghost{border:1px solid rgba(200,168,130,.3);color:var(--a);padding:.75rem 1.5rem;border-radius:2px;font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .2s}
 .btn-ghost:hover{border-color:var(--a);color:var(--ow)}
-.hero-right{background:#2a1410;overflow:hidden}
+.hero-right{overflow:hidden}
 .hero-right img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
 
 /* SOBRE */
@@ -46,7 +46,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--t);color:var(--t)}
 .svc-name{font-size:.88rem;font-weight:500;color:var(--t)}
 .svc-desc{font-size:.75rem;color:var(--mid);text-align:right;max-width:180px;line-height:1.4}
 
-/* SECTION HEADER */
+/* SECTION HEADERS */
 .sh{padding:4rem 3rem 2.5rem}
 .sh.dk{background:var(--t)}
 .sh.gn{background:var(--v)}
@@ -72,23 +72,19 @@ body{font-family:'DM Sans',sans-serif;background:var(--t);color:var(--t)}
 .ahl-feat-txt{font-size:.78rem;color:rgba(250,245,240,.55);line-height:1.5}
 .ahr{background:#170a05;overflow:hidden}
 
-/* GRIDS DE MÍDIA — imagens contidas sem corte */
-.media-5{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto;gap:2px;background:rgba(200,168,130,.06);padding:2px}
-.media-5 .ms:first-child{grid-column:1/-1}
-.media-4{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:2px;background:rgba(200,168,130,.06);padding:2px}
-.media-2{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(200,168,130,.06);padding:2px}
-.media-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:rgba(200,168,130,.06);padding:2px}
+/* SLOT VERTICAL 4x5 */
+.slot-4x5{aspect-ratio:4/5;overflow:hidden;background:#170a05}
+.slot-4x5 img{width:100%;height:100%;object-fit:cover;display:block}
 
-/* slot de imagem — contém a imagem inteira */
-.ms{background:#170a05;display:flex;align-items:center;justify-content:center;overflow:hidden;min-height:120px}
-.ms img{width:100%;height:100%;object-fit:contain;display:block;max-height:220px}
+/* GRID 2 COLUNAS para anitta */
+.media-2col{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(200,168,130,.06);padding:2px;height:100%}
 
-/* slot de vídeo YouTube clicável */
-.yt-slot{background:#170a05;position:relative;display:block;text-decoration:none;overflow:hidden;min-height:120px}
-.yt-slot img{width:100%;height:100%;object-fit:cover;display:block;opacity:.7;transition:opacity .2s}
-.yt-slot:hover img{opacity:.9}
+/* SLOT DE VÍDEO CLICÁVEL VERTICAL */
+.yt-v{display:block;text-decoration:none;position:relative;overflow:hidden;background:#170a05;aspect-ratio:4/5}
+.yt-v img{width:100%;height:100%;object-fit:cover;display:block;opacity:.8;transition:opacity .2s}
+.yt-v:hover img{opacity:1}
 .yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-.yt-play svg{width:48px;height:48px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.yt-play svg{width:52px;height:52px;filter:drop-shadow(0 2px 10px rgba(0,0,0,.6))}
 
 /* CASES GRID */
 .cw{background:var(--t);padding:0 3rem 3rem}
@@ -97,12 +93,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--t);color:var(--t)}
 .cg3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(200,168,130,.07);margin-bottom:.75rem}
 .cg3:last-child{margin-bottom:0}
 .cc{background:#1e0d08;display:flex;flex-direction:column}
-.cc-media{display:grid;gap:2px;background:rgba(200,168,130,.07);overflow:hidden;padding:2px}
+.cc-media{display:grid;gap:2px;background:rgba(200,168,130,.07);padding:2px}
 .cc-media.s2{grid-template-columns:1fr 1fr}
-.cc-media.s3{grid-template-columns:1fr 1fr 1fr}
-.mm{background:#170a05;display:flex;align-items:center;justify-content:center;overflow:hidden;min-height:80px}
-.mm img{width:100%;height:100%;object-fit:contain;max-height:140px;display:block}
-.mm.cover img{object-fit:cover;max-height:none;height:140px}
+.cc-media.s1{grid-template-columns:1fr}
 .cc-body{padding:1.5rem;flex:1}
 .cc-ag{font-size:.58rem;letter-spacing:.09em;text-transform:uppercase;color:rgba(200,168,130,.35);margin-bottom:.25rem}
 .cc-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--ow);margin-bottom:.2rem;line-height:1.05}
@@ -112,9 +105,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--t);color:var(--t)}
 .cc-ul li:last-child{border-bottom:none}
 .cc-ul li::before{content:'–';position:absolute;left:0;color:rgba(200,168,130,.3);font-size:.68rem}
 
+/* LIVE NATION — imagem 4x5 */
+.live-img{aspect-ratio:4/5;overflow:hidden;background:#1e0d08}
+.live-img img{width:100%;height:100%;object-fit:cover;display:block}
+
 /* NEGÓCIOS */
 .pq-wrap{background:var(--v);padding:0 3rem 4rem}
-.pqc{display:grid;grid-template-columns:1fr 1.5fr;border-bottom:1px solid rgba(200,168,130,.08);padding:2.5rem 0;gap:2rem;align-items:start}
+.pqc{display:grid;grid-template-columns:1fr 1.2fr;border-bottom:1px solid rgba(200,168,130,.08);padding:2.5rem 0;gap:2rem;align-items:center}
 .pqc:first-child{padding-top:0}
 .pqc:last-child{border-bottom:none}
 .pql-ag{font-size:.58rem;letter-spacing:.09em;text-transform:uppercase;color:rgba(200,168,130,.38);margin-bottom:.3rem}
@@ -124,11 +121,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--t);color:var(--t)}
 .pql-ul li{font-size:.78rem;color:rgba(250,245,240,.48);padding:.4rem 0;border-bottom:1px solid rgba(200,168,130,.07);padding-left:.8rem;position:relative;line-height:1.45}
 .pql-ul li:last-child{border-bottom:none}
 .pql-ul li::before{content:'–';position:absolute;left:0;color:rgba(200,168,130,.3);font-size:.68rem}
-.pqr{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(200,168,130,.07);padding:2px}
-.pqr.s4{grid-template-rows:auto auto}
-.pqm{background:rgba(200,168,130,.03);display:flex;align-items:center;justify-content:center;min-height:110px;overflow:hidden}
-.pqm img{width:100%;height:100%;object-fit:contain;max-height:160px;display:block}
-.pqm.cover img{object-fit:cover;max-height:none;height:160px}
 
 /* CTA */
 .cta{background:var(--b);padding:5rem 3rem;display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:center}
@@ -148,7 +140,7 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
 
 @media(max-width:900px){
   .hero,.sobre,.ahero-inner,.cta{grid-template-columns:1fr}
-  .hero-right{height:70vw}
+  .hero-right{height:80vw}
   .hero-left,.sobre-l,.sobre-r,.sh,.ahl,.cw,.pq-wrap,.ahero,.cta{padding-left:1.25rem;padding-right:1.25rem}
   .cg3{grid-template-columns:1fr}
   .pqc{grid-template-columns:1fr}
@@ -202,7 +194,7 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
   <p class="sh-sub">De lançamentos de álbuns a coberturas ao vivo, estratégia de conteúdo nos maiores projetos do entretenimento brasileiro.</p>
 </div>
 
-<!-- ANITTA -->
+<!-- ANITTA — 2 fotos verticais -->
 <div class="ahero">
   <div class="ahero-inner">
     <div class="ahl">
@@ -218,12 +210,9 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
       </div>
     </div>
     <div class="ahr">
-      <div class="media-5">
-        <div class="ms"><img src="anitta1.jpg" alt="Anitta pré-estreia"></div>
-        <div class="ms"><img src="anitta2.jpg" alt="Anitta Funk Generation"></div>
-        <div class="ms"><img src="anitta3.jpg" alt="Anitta Boys Don't Cry"></div>
-        <div class="ms"><img src="anitta4.jpg" alt="Anitta LinkedIn"></div>
-        <div class="ms"><img src="anitta5.jpg" alt="Anitta Puzzy"></div>
+      <div class="media-2col">
+        <div class="slot-4x5"><img src="anitta1.jpg" alt="Anitta pré-estreia"></div>
+        <div class="slot-4x5"><img src="anitta5.jpg" alt="Anitta Puzzy"></div>
       </div>
     </div>
   </div>
@@ -233,16 +222,16 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
 <div class="cw">
   <p class="cat-lbl">Outros artistas</p>
   <div class="cg3">
-    <!-- JULIETTE -->
+
+    <!-- JULIETTE — 2 vídeos com capas verticais -->
     <div class="cc">
-      <div class="cc-media s3">
-        <div class="mm cover"><img src="Juliette.jpg" alt="HQ Ciclone"></div>
-        <a class="yt-slot mm cover" href="https://youtube.com/shorts/nrSbB5NZ-yA" target="_blank">
-          <img src="https://img.youtube.com/vi/nrSbB5NZ-yA/mqdefault.jpg" alt="Juliette vídeo 1">
+      <div class="cc-media s2">
+        <a class="yt-v" href="https://youtube.com/shorts/nrSbB5NZ-yA" target="_blank">
+          <img src="juliette-capa1.webp" alt="Juliette São Juão">
           <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
         </a>
-        <a class="yt-slot mm cover" href="https://youtube.com/shorts/sgeeDSU9CJs" target="_blank">
-          <img src="https://img.youtube.com/vi/sgeeDSU9CJs/mqdefault.jpg" alt="Juliette vídeo 2">
+        <a class="yt-v" href="https://youtube.com/shorts/sgeeDSU9CJs" target="_blank">
+          <img src="juliette-capa2.webp" alt="Juliette Ciclone">
           <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
         </a>
       </div>
@@ -259,12 +248,12 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
         </ul>
       </div>
     </div>
+
     <!-- IZA -->
     <div class="cc">
-      <div class="cc-media s3">
-        <div class="mm cover"><img src="iza1.jpg" alt="IZA Sem Filtro"></div>
-        <div class="mm cover"><img src="iza2.jpg" alt="IZA TikTok"></div>
-        <div class="mm cover"><img src="iza3.jpg" alt="IZA Lambe-lambe"></div>
+      <div class="cc-media s2">
+        <div class="slot-4x5"><img src="iza1.jpg" alt="IZA Sem Filtro"></div>
+        <div class="slot-4x5"><img src="iza2.jpg" alt="IZA TikTok"></div>
       </div>
       <div class="cc-body">
         <p class="cc-ag">Agência Squad Media</p>
@@ -277,11 +266,12 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
         </ul>
       </div>
     </div>
+
     <!-- CLAUDIA LEITTE -->
     <div class="cc">
       <div class="cc-media s2">
-        <div class="mm cover"><img src="claudialeite1.jpg" alt="Claudia Leitte Reels"></div>
-        <div class="mm cover"><img src="claudialeite2.jpg" alt="Claudia Leitte Intemporal"></div>
+        <div class="slot-4x5"><img src="claudialeite1.jpg" alt="Claudia Leitte Reels"></div>
+        <div class="slot-4x5"><img src="claudialeite2.jpg" alt="Claudia Leitte Intemporal"></div>
       </div>
       <div class="cc-body">
         <p class="cc-ag">Agência Squad Media</p>
@@ -297,15 +287,15 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
   </div>
 
   <div class="cg3">
-    <!-- MANEVA -->
+    <!-- MANEVA — 2 vídeos com capas verticais -->
     <div class="cc">
       <div class="cc-media s2">
-        <a class="yt-slot mm cover" href="https://youtube.com/shorts/DcXlw-nkeXc" target="_blank">
-          <img src="https://img.youtube.com/vi/DcXlw-nkeXc/mqdefault.jpg" alt="Maneva vídeo 1">
+        <a class="yt-v" href="https://youtube.com/shorts/DcXlw-nkeXc" target="_blank">
+          <img src="maneva-capa1.jpg" alt="Maneva show">
           <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
         </a>
-        <a class="yt-slot mm cover" href="https://youtube.com/shorts/hhgkyPYP9HE" target="_blank">
-          <img src="https://img.youtube.com/vi/hhgkyPYP9HE/mqdefault.jpg" alt="Maneva vídeo 2">
+        <a class="yt-v" href="https://youtube.com/shorts/hhgkyPYP9HE" target="_blank">
+          <img src="maneva-capa2.jpg" alt="Maneva banda">
           <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
         </a>
       </div>
@@ -320,11 +310,11 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
         </ul>
       </div>
     </div>
-    <!-- LIVE NATION -->
+
+    <!-- LIVE NATION — 1 foto 4x5 -->
     <div class="cc">
-      <div class="cc-media s2">
-        <div class="mm cover"><img src="live1.jpg" alt="Live Nation Caetano"></div>
-        <div class="mm cover"><img src="live2.jpg" alt="Live Nation Bruno Mars"></div>
+      <div class="cc-media s1">
+        <div class="live-img"><img src="live1.jpg" alt="Live Nation"></div>
       </div>
       <div class="cc-body">
         <p class="cc-ag">Live Nation Brasil</p>
@@ -336,12 +326,12 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
         </ul>
       </div>
     </div>
-    <!-- WARNER -->
+
+    <!-- WARNER — 1 vídeo com capa vertical -->
     <div class="cc">
-      <div class="cc-media s2">
-        <div class="mm cover"><img src="warner1.png" alt="Warner Música Nova"></div>
-        <a class="yt-slot mm cover" href="https://youtu.be/VhQ2OUPz7uM" target="_blank">
-          <img src="https://img.youtube.com/vi/VhQ2OUPz7uM/mqdefault.jpg" alt="Warner Música Nova YouTube">
+      <div class="cc-media s1">
+        <a class="yt-v" href="https://youtu.be/VhQ2OUPz7uM" target="_blank" style="aspect-ratio:4/5">
+          <img src="warner-capa.png" alt="Warner Música Nova">
           <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
         </a>
       </div>
@@ -367,7 +357,8 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
 
 <!-- NEGÓCIOS CASES -->
 <div class="pq-wrap">
-  <!-- IBIS -->
+
+  <!-- IBIS — 2 vídeos verticais -->
   <div class="pqc">
     <div>
       <p class="pql-ag">Prosperitas Consultoria</p>
@@ -379,20 +370,19 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
         <li>Calendário editorial alinhado à sazonalidade do setor</li>
       </ul>
     </div>
-    <div class="pqr s4">
-      <div class="pqm cover"><img src="ibis1.png" alt="Ibis Vai voar cedo"></div>
-      <div class="pqm cover"><img src="ibis2.png" alt="Ibis Boa viagem"></div>
-      <a class="yt-slot pqm cover" href="https://youtube.com/shorts/rJ40ekISQZY" target="_blank">
-        <img src="https://img.youtube.com/vi/rJ40ekISQZY/mqdefault.jpg" alt="Ibis vídeo 1">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
+      <a class="yt-v" href="https://youtube.com/shorts/rJ40ekISQZY" target="_blank">
+        <img src="ibis-capa1.png" alt="Ibis mascote">
         <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
       </a>
-      <a class="yt-slot pqm cover" href="https://youtube.com/shorts/ZZoAJHrklfk" target="_blank">
-        <img src="https://img.youtube.com/vi/ZZoAJHrklfk/mqdefault.jpg" alt="Ibis vídeo 2">
+      <a class="yt-v" href="https://youtube.com/shorts/ZZoAJHrklfk" target="_blank">
+        <img src="ibis-capa2.png" alt="Ibis chef">
         <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
       </a>
     </div>
   </div>
-  <!-- HQZ -->
+
+  <!-- HQZ — 1 vídeo vertical -->
   <div class="pqc">
     <div>
       <p class="pql-ag">Agência Estação Indoor</p>
@@ -404,15 +394,13 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
         <li>Planejamento editorial mensal</li>
       </ul>
     </div>
-    <div class="pqr">
-      <div class="pqm cover"><img src="hqz.png" alt="HQZ Nails"></div>
-      <a class="yt-slot pqm cover" href="https://youtube.com/shorts/MM5CDlWrXW8" target="_blank">
-        <img src="https://img.youtube.com/vi/MM5CDlWrXW8/mqdefault.jpg" alt="HQZ vídeo">
-        <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
-      </a>
-    </div>
+    <a class="yt-v" href="https://youtube.com/shorts/MM5CDlWrXW8" target="_blank">
+      <img src="hqz-capa.png" alt="HQZ vende com você">
+      <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
+    </a>
   </div>
-  <!-- JOSÉ PUGAS -->
+
+  <!-- JOSÉ PUGAS — 1 vídeo vertical -->
   <div class="pqc">
     <div>
       <p class="pql-ag">Agência Criei</p>
@@ -422,15 +410,13 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
         <li>Gestão de redes sociais</li>
       </ul>
     </div>
-    <div class="pqr">
-      <div class="pqm cover"><img src="jose.png" alt="José Pugas"></div>
-      <a class="yt-slot pqm cover" href="https://youtube.com/shorts/wwX4ML5Nzzk" target="_blank">
-        <img src="https://img.youtube.com/vi/wwX4ML5Nzzk/mqdefault.jpg" alt="José Pugas vídeo">
-        <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
-      </a>
-    </div>
+    <a class="yt-v" href="https://youtube.com/shorts/wwX4ML5Nzzk" target="_blank">
+      <img src="pugas-capa.png" alt="José Pugas">
+      <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
+    </a>
   </div>
-  <!-- INSTITUTO CRISPI -->
+
+  <!-- CRISPI — 1 foto vertical -->
   <div class="pqc">
     <div>
       <p class="pql-ag">Freelancer</p>
@@ -442,13 +428,9 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
         <li>Pauta educativa com linguagem acessível</li>
       </ul>
     </div>
-    <div class="pqr s4">
-      <div class="pqm cover"><img src="crispi1.png" alt="Instituto Crispi grid"></div>
-      <div class="pqm cover"><img src="crispi2.png" alt="O corpo fala"></div>
-      <div class="pqm cover"><img src="crispi3.png" alt="Endometriose e peso"></div>
-      <div class="pqm" style="background:rgba(200,168,130,.02)"></div>
-    </div>
+    <div class="slot-4x5"><img src="crispi1.png" alt="Instituto Crispi"></div>
   </div>
+
 </div>
 
 <!-- CONTATO -->
