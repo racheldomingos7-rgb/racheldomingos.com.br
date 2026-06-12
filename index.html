@@ -70,17 +70,18 @@ body{font-family:'DM Sans',sans-serif;background:var(--t);color:var(--t)}
 .ahl-feat:first-child{border-top:1px solid rgba(200,168,130,.07)}
 .ahl-feat-lbl{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--a);opacity:.5;flex-shrink:0;width:48px}
 .ahl-feat-txt{font-size:.78rem;color:rgba(250,245,240,.55);line-height:1.5}
-.ahr{background:#170a05;overflow:hidden}
+.ahr{background:#170a05;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:2rem}
 
 /* SLOT VERTICAL 4x5 */
-.slot-4x5{aspect-ratio:4/5;overflow:hidden;background:#170a05}
+.slot-4x5{aspect-ratio:4/5;overflow:hidden;background:#170a05;max-height:300px}
 .slot-4x5 img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* GRID 2 COLUNAS para anitta */
-.media-2col{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(200,168,130,.06);padding:2px;height:100%}
+.media-2col{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(200,168,130,.06);padding:2px;width:100%}
 
 /* SLOT DE VÍDEO CLICÁVEL VERTICAL */
 .yt-v{display:block;text-decoration:none;position:relative;overflow:hidden;background:#170a05;aspect-ratio:4/5}
+.pq-wrap .yt-v{max-height:260px}
 .yt-v img{width:100%;height:100%;object-fit:cover;display:block;opacity:.8;transition:opacity .2s}
 .yt-v:hover img{opacity:1}
 .yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
@@ -92,7 +93,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--t);color:var(--t)}
 .cat-lbl::after{content:'';flex:1;height:1px;background:rgba(200,168,130,.07)}
 .cg3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(200,168,130,.07);margin-bottom:.75rem}
 .cg3:last-child{margin-bottom:0}
-.cc{background:#1e0d08;display:flex;flex-direction:column}
+.cc{background:#1e0d08;display:flex;flex-direction:column;min-height:420px}
 .cc-media{display:grid;gap:2px;background:rgba(200,168,130,.07);padding:2px}
 .cc-media.s2{grid-template-columns:1fr 1fr}
 .cc-media.s1{grid-template-columns:1fr}
@@ -106,7 +107,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--t);color:var(--t)}
 .cc-ul li::before{content:'–';position:absolute;left:0;color:rgba(200,168,130,.3);font-size:.68rem}
 
 /* LIVE NATION — imagem 4x5 */
-.live-img{aspect-ratio:4/5;overflow:hidden;background:#1e0d08}
+.live-img{aspect-ratio:4/5;overflow:hidden;background:#1e0d08;max-height:280px}
 .live-img img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* NEGÓCIOS */
@@ -145,6 +146,35 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
   .cg3{grid-template-columns:1fr}
   .pqc{grid-template-columns:1fr}
   footer{padding:1rem 1.25rem}
+}
+
+/* ANITTA: centraliza fotos verticalmente */
+.ahr {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1.5rem !important;
+}
+.media-2col {
+  width: 100%;
+  max-width: 100%;
+}
+.media-2col .slot-4x5 {
+  max-height: 280px;
+}
+
+/* MANEVA / LIVE / WARNER: mesma altura mínima */
+.cg3 .cc {
+  min-height: 400px;
+}
+
+/* NEGÓCIOS: vídeos e fotos menores */
+.pq-wrap .yt-v {
+  max-height: 240px;
+  aspect-ratio: 4/5;
+}
+.pq-wrap .slot-4x5 {
+  max-height: 240px;
 }
 </style>
 </head>
