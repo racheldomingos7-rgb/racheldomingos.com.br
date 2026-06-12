@@ -148,19 +148,26 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
   footer{padding:1rem 1.25rem}
 }
 
-/* ANITTA: centraliza fotos verticalmente */
+/* ANITTA: fotos preenchem painel inteiro */
 .ahr {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 1.5rem !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 2px !important;
+  padding: 0 !important;
+  align-items: stretch !important;
 }
 .media-2col {
-  width: 100%;
-  max-width: 100%;
+  display: contents;
 }
 .media-2col .slot-4x5 {
-  max-height: 280px;
+  max-height: none !important;
+  height: 100% !important;
+  aspect-ratio: unset !important;
+}
+.media-2col .slot-4x5 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* MANEVA / LIVE / WARNER: mesma altura mínima */
@@ -341,10 +348,11 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
       </div>
     </div>
 
-    <!-- LIVE NATION — 1 foto 4x5 -->
+    <!-- LIVE NATION — 2 fotos 4x5 -->
     <div class="cc">
-      <div class="cc-media s1">
-        <div class="live-img"><img src="live1.jpg" alt="Live Nation"></div>
+      <div class="cc-media s2">
+        <div class="slot-4x5" style="max-height:none;height:280px"><img src="live1.jpg" alt="Live Nation Caetano"></div>
+        <div class="slot-4x5" style="max-height:none;height:280px"><img src="live2.jpg" alt="Live Nation Bruno Mars"></div>
       </div>
       <div class="cc-body">
         <p class="cc-ag">Live Nation Brasil</p>
