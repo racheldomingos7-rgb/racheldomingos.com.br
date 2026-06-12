@@ -11,15 +11,8 @@
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--t);color:var(--t)}
 
-.nav{background:var(--t);padding:0 2.5rem;height:56px;display:flex;align-items:center;justify-content:space-between;position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid rgba(200,168,130,.08)}
-.nav-brand{font-family:'Playfair Display',serif;font-size:1rem;color:var(--ow);letter-spacing:.03em;text-decoration:none}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,245,240,.45);text-decoration:none;transition:color .2s}
-.nav-links a:hover{color:var(--a)}
-.nav-btn{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;background:var(--b);color:var(--ow);padding:.45rem 1.1rem;border-radius:2px;text-decoration:none;transition:background .2s}
-.nav-btn:hover{background:#9A2D55}
-
-.hero{background:var(--t);min-height:100vh;display:grid;grid-template-columns:1fr 380px;overflow:hidden;padding-top:56px}
+/* HERO */
+.hero{background:var(--t);min-height:100vh;display:grid;grid-template-columns:1fr 380px;overflow:hidden}
 .hero-left{padding:4rem 3rem;display:flex;flex-direction:column;justify-content:flex-end}
 .hero-tag{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--a);margin-bottom:1.25rem;display:flex;align-items:center;gap:.6rem}
 .hero-tag::before{content:'';width:20px;height:1px;background:var(--b);display:block}
@@ -32,9 +25,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--t);color:var(--t)}
 .btn-prim:hover{background:#9A2D55}
 .btn-ghost{border:1px solid rgba(200,168,130,.3);color:var(--a);padding:.75rem 1.5rem;border-radius:2px;font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .2s}
 .btn-ghost:hover{border-color:var(--a);color:var(--ow)}
-.hero-right{background:#2a1410;position:relative;overflow:hidden}
-.hero-right img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.hero-right{background:#2a1410;overflow:hidden}
+.hero-right img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
 
+/* SOBRE */
 .sobre{display:grid;grid-template-columns:1fr 1.2fr}
 .sobre-l{background:var(--b);padding:5rem 3rem;display:flex;flex-direction:column;justify-content:center}
 .sobre-r{background:var(--ow);padding:5rem 3rem;display:flex;flex-direction:column;justify-content:center}
@@ -52,6 +46,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--t);color:var(--t)}
 .svc-name{font-size:.88rem;font-weight:500;color:var(--t)}
 .svc-desc{font-size:.75rem;color:var(--mid);text-align:right;max-width:180px;line-height:1.4}
 
+/* SECTION HEADER */
 .sh{padding:4rem 3rem 2.5rem}
 .sh.dk{background:var(--t)}
 .sh.gn{background:var(--v)}
@@ -75,18 +70,25 @@ body{font-family:'DM Sans',sans-serif;background:var(--t);color:var(--t)}
 .ahl-feat:first-child{border-top:1px solid rgba(200,168,130,.07)}
 .ahl-feat-lbl{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--a);opacity:.5;flex-shrink:0;width:48px}
 .ahl-feat-txt{font-size:.78rem;color:rgba(250,245,240,.55);line-height:1.5}
-.ahr{background:#170a05;display:flex;flex-direction:column}
+.ahr{background:#170a05;overflow:hidden}
 
-/* MEDIA GRIDS */
-.media-5{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr 1fr;flex:1;gap:1px;background:rgba(200,168,130,.06);min-height:280px}
+/* GRIDS DE MÍDIA — imagens contidas sem corte */
+.media-5{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto;gap:2px;background:rgba(200,168,130,.06);padding:2px}
 .media-5 .ms:first-child{grid-column:1/-1}
-.media-4{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;flex:1;gap:1px;background:rgba(200,168,130,.06);min-height:240px}
-.media-2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(200,168,130,.06);min-height:180px}
-.media-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(200,168,130,.06);min-height:180px}
-.ms{background:#170a05;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;position:relative}
-.ms img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.ms iframe{width:100%;height:100%;position:absolute;inset:0;border:none}
-.ms-lb{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(200,168,130,.22);text-align:center;padding:0 .5rem;position:relative;z-index:1}
+.media-4{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:2px;background:rgba(200,168,130,.06);padding:2px}
+.media-2{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(200,168,130,.06);padding:2px}
+.media-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:rgba(200,168,130,.06);padding:2px}
+
+/* slot de imagem — contém a imagem inteira */
+.ms{background:#170a05;display:flex;align-items:center;justify-content:center;overflow:hidden;min-height:120px}
+.ms img{width:100%;height:100%;object-fit:contain;display:block;max-height:220px}
+
+/* slot de vídeo YouTube clicável */
+.yt-slot{background:#170a05;position:relative;display:block;text-decoration:none;overflow:hidden;min-height:120px}
+.yt-slot img{width:100%;height:100%;object-fit:cover;display:block;opacity:.7;transition:opacity .2s}
+.yt-slot:hover img{opacity:.9}
+.yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.yt-play svg{width:48px;height:48px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
 
 /* CASES GRID */
 .cw{background:var(--t);padding:0 3rem 3rem}
@@ -95,13 +97,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--t);color:var(--t)}
 .cg3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(200,168,130,.07);margin-bottom:.75rem}
 .cg3:last-child{margin-bottom:0}
 .cc{background:#1e0d08;display:flex;flex-direction:column}
-.cc-media{display:grid;aspect-ratio:16/9;gap:1px;background:rgba(200,168,130,.07);overflow:hidden;position:relative}
+.cc-media{display:grid;gap:2px;background:rgba(200,168,130,.07);overflow:hidden;padding:2px}
 .cc-media.s2{grid-template-columns:1fr 1fr}
 .cc-media.s3{grid-template-columns:1fr 1fr 1fr}
-.mm{background:#170a05;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
-.mm img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.mm iframe{width:100%;height:100%;position:absolute;inset:0;border:none;pointer-events:none}
-.mm-lb{font-size:.52rem;letter-spacing:.05em;text-transform:uppercase;color:rgba(200,168,130,.18);text-align:center;padding:0 .25rem;position:relative;z-index:1}
+.mm{background:#170a05;display:flex;align-items:center;justify-content:center;overflow:hidden;min-height:80px}
+.mm img{width:100%;height:100%;object-fit:contain;max-height:140px;display:block}
+.mm.cover img{object-fit:cover;max-height:none;height:140px}
 .cc-body{padding:1.5rem;flex:1}
 .cc-ag{font-size:.58rem;letter-spacing:.09em;text-transform:uppercase;color:rgba(200,168,130,.35);margin-bottom:.25rem}
 .cc-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--ow);margin-bottom:.2rem;line-height:1.05}
@@ -123,12 +124,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--t);color:var(--t)}
 .pql-ul li{font-size:.78rem;color:rgba(250,245,240,.48);padding:.4rem 0;border-bottom:1px solid rgba(200,168,130,.07);padding-left:.8rem;position:relative;line-height:1.45}
 .pql-ul li:last-child{border-bottom:none}
 .pql-ul li::before{content:'–';position:absolute;left:0;color:rgba(200,168,130,.3);font-size:.68rem}
-.pqr{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(200,168,130,.07)}
-.pqr.s4{grid-template-rows:1fr 1fr}
-.pqm{background:rgba(200,168,130,.03);display:flex;align-items:center;justify-content:center;min-height:120px;overflow:hidden;position:relative}
-.pqm img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.pqm iframe{width:100%;height:100%;position:absolute;inset:0;border:none;pointer-events:none}
-.pqm-lb{font-size:.52rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(200,168,130,.18);position:relative;z-index:1}
+.pqr{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(200,168,130,.07);padding:2px}
+.pqr.s4{grid-template-rows:auto auto}
+.pqm{background:rgba(200,168,130,.03);display:flex;align-items:center;justify-content:center;min-height:110px;overflow:hidden}
+.pqm img{width:100%;height:100%;object-fit:contain;max-height:160px;display:block}
+.pqm.cover img{object-fit:cover;max-height:none;height:160px}
 
 /* CTA */
 .cta{background:var(--b);padding:5rem 3rem;display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:center}
@@ -147,10 +147,8 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
 .ft-copy{font-size:.65rem;color:rgba(250,245,240,.15)}
 
 @media(max-width:900px){
-  .nav{padding:0 1.25rem}
-  .nav-links{display:none}
   .hero,.sobre,.ahero-inner,.cta{grid-template-columns:1fr}
-  .hero-right{height:60vw}
+  .hero-right{height:70vw}
   .hero-left,.sobre-l,.sobre-r,.sh,.ahl,.cw,.pq-wrap,.ahero,.cta{padding-left:1.25rem;padding-right:1.25rem}
   .cg3{grid-template-columns:1fr}
   .pqc{grid-template-columns:1fr}
@@ -160,17 +158,7 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
 </head>
 <body>
 
-<nav>
-  <a href="#" class="nav-brand">Rachel Domingos</a>
-  <ul class="nav-links">
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#artistas">Artistas</a></li>
-    <li><a href="#negocios">Negócios</a></li>
-    <li><a href="#contato">Contato</a></li>
-  </ul>
-  <a href="#contato" class="nav-btn">Me chamar</a>
-</nav>
-
+<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <p class="hero-tag">Estratégia de Conteúdo · Rio de Janeiro</p>
@@ -186,6 +174,7 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
   </div>
 </section>
 
+<!-- SOBRE -->
 <section class="sobre" id="sobre">
   <div class="sobre-l">
     <p class="eyebrow">Quem é Rachel</p>
@@ -206,12 +195,14 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
   </div>
 </section>
 
+<!-- ARTISTAS HEADER -->
 <div class="sh dk" id="artistas">
   <p class="sh-eye">Portfólio, Entretenimento e Artistas</p>
   <h2 class="sh-title">Trabalhos que <em>fizeram história</em></h2>
   <p class="sh-sub">De lançamentos de álbuns a coberturas ao vivo, estratégia de conteúdo nos maiores projetos do entretenimento brasileiro.</p>
 </div>
 
+<!-- ANITTA -->
 <div class="ahero">
   <div class="ahero-inner">
     <div class="ahl">
@@ -228,7 +219,7 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
     </div>
     <div class="ahr">
       <div class="media-5">
-        <div class="ms"><img src="anitta1.jpg" alt="Anitta pré-estreia Funk Generation"></div>
+        <div class="ms"><img src="anitta1.jpg" alt="Anitta pré-estreia"></div>
         <div class="ms"><img src="anitta2.jpg" alt="Anitta Funk Generation"></div>
         <div class="ms"><img src="anitta3.jpg" alt="Anitta Boys Don't Cry"></div>
         <div class="ms"><img src="anitta4.jpg" alt="Anitta LinkedIn"></div>
@@ -238,18 +229,22 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
   </div>
 </div>
 
+<!-- OUTROS ARTISTAS -->
 <div class="cw">
   <p class="cat-lbl">Outros artistas</p>
   <div class="cg3">
+    <!-- JULIETTE -->
     <div class="cc">
       <div class="cc-media s3">
-        <div class="mm"><img src="Juliette.jpg" alt="HQ Ciclone"></div>
-        <div class="mm">
-          <iframe src="https://www.youtube.com/embed/nrSbB5NZ-yA" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="mm">
-          <iframe src="https://www.youtube.com/embed/sgeeDSU9CJs" allowfullscreen loading="lazy"></iframe>
-        </div>
+        <div class="mm cover"><img src="Juliette.jpg" alt="HQ Ciclone"></div>
+        <a class="yt-slot mm cover" href="https://youtube.com/shorts/nrSbB5NZ-yA" target="_blank">
+          <img src="https://img.youtube.com/vi/nrSbB5NZ-yA/mqdefault.jpg" alt="Juliette vídeo 1">
+          <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
+        </a>
+        <a class="yt-slot mm cover" href="https://youtube.com/shorts/sgeeDSU9CJs" target="_blank">
+          <img src="https://img.youtube.com/vi/sgeeDSU9CJs/mqdefault.jpg" alt="Juliette vídeo 2">
+          <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
+        </a>
       </div>
       <div class="cc-body">
         <p class="cc-ag">Agência Squad Media</p>
@@ -264,11 +259,12 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
         </ul>
       </div>
     </div>
+    <!-- IZA -->
     <div class="cc">
       <div class="cc-media s3">
-        <div class="mm"><img src="iza1.jpg" alt="IZA Sem Filtro"></div>
-        <div class="mm"><img src="iza2.jpg" alt="IZA TikTok"></div>
-        <div class="mm"><img src="iza3.jpg" alt="IZA Lambe-lambe Fé"></div>
+        <div class="mm cover"><img src="iza1.jpg" alt="IZA Sem Filtro"></div>
+        <div class="mm cover"><img src="iza2.jpg" alt="IZA TikTok"></div>
+        <div class="mm cover"><img src="iza3.jpg" alt="IZA Lambe-lambe"></div>
       </div>
       <div class="cc-body">
         <p class="cc-ag">Agência Squad Media</p>
@@ -281,10 +277,11 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
         </ul>
       </div>
     </div>
+    <!-- CLAUDIA LEITTE -->
     <div class="cc">
       <div class="cc-media s2">
-        <div class="mm"><img src="claudialeite1.jpg" alt="Claudia Leitte Reels"></div>
-        <div class="mm"><img src="claudialeite2.jpg" alt="Claudia Leitte Intemporal"></div>
+        <div class="mm cover"><img src="claudialeite1.jpg" alt="Claudia Leitte Reels"></div>
+        <div class="mm cover"><img src="claudialeite2.jpg" alt="Claudia Leitte Intemporal"></div>
       </div>
       <div class="cc-body">
         <p class="cc-ag">Agência Squad Media</p>
@@ -298,15 +295,19 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
       </div>
     </div>
   </div>
+
   <div class="cg3">
+    <!-- MANEVA -->
     <div class="cc">
       <div class="cc-media s2">
-        <div class="mm">
-          <iframe src="https://www.youtube.com/embed/DcXlw-nkeXc" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="mm">
-          <iframe src="https://www.youtube.com/embed/hhgkyPYP9HE" allowfullscreen loading="lazy"></iframe>
-        </div>
+        <a class="yt-slot mm cover" href="https://youtube.com/shorts/DcXlw-nkeXc" target="_blank">
+          <img src="https://img.youtube.com/vi/DcXlw-nkeXc/mqdefault.jpg" alt="Maneva vídeo 1">
+          <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
+        </a>
+        <a class="yt-slot mm cover" href="https://youtube.com/shorts/hhgkyPYP9HE" target="_blank">
+          <img src="https://img.youtube.com/vi/hhgkyPYP9HE/mqdefault.jpg" alt="Maneva vídeo 2">
+          <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
+        </a>
       </div>
       <div class="cc-body">
         <p class="cc-ag">Agência Squad Media</p>
@@ -319,10 +320,11 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
         </ul>
       </div>
     </div>
+    <!-- LIVE NATION -->
     <div class="cc">
       <div class="cc-media s2">
-        <div class="mm"><img src="live1.jpg" alt="Live Nation Caetano"></div>
-        <div class="mm"><img src="live2.jpg" alt="Live Nation Bruno Mars"></div>
+        <div class="mm cover"><img src="live1.jpg" alt="Live Nation Caetano"></div>
+        <div class="mm cover"><img src="live2.jpg" alt="Live Nation Bruno Mars"></div>
       </div>
       <div class="cc-body">
         <p class="cc-ag">Live Nation Brasil</p>
@@ -334,12 +336,14 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
         </ul>
       </div>
     </div>
+    <!-- WARNER -->
     <div class="cc">
       <div class="cc-media s2">
-        <div class="mm"><img src="warner1.png" alt="Warner Música Nova"></div>
-        <div class="mm">
-          <iframe src="https://www.youtube.com/embed/VhQ2OUPz7uM" allowfullscreen loading="lazy"></iframe>
-        </div>
+        <div class="mm cover"><img src="warner1.png" alt="Warner Música Nova"></div>
+        <a class="yt-slot mm cover" href="https://youtu.be/VhQ2OUPz7uM" target="_blank">
+          <img src="https://img.youtube.com/vi/VhQ2OUPz7uM/mqdefault.jpg" alt="Warner Música Nova YouTube">
+          <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
+        </a>
       </div>
       <div class="cc-body">
         <p class="cc-ag">Agência Squad Media</p>
@@ -354,13 +358,16 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
   </div>
 </div>
 
+<!-- NEGÓCIOS HEADER -->
 <div class="sh gn" id="negocios">
   <p class="sh-eye">Portfólio, Marcas e Negócios</p>
   <h2 class="sh-title">Estratégia para <em>marcas que crescem</em></h2>
   <p class="sh-sub">Da rede hoteleira ao negócio local, a mesma dedicação e metodologia em cada projeto.</p>
 </div>
 
+<!-- NEGÓCIOS CASES -->
 <div class="pq-wrap">
+  <!-- IBIS -->
   <div class="pqc">
     <div>
       <p class="pql-ag">Prosperitas Consultoria</p>
@@ -373,16 +380,19 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
       </ul>
     </div>
     <div class="pqr s4">
-      <div class="pqm"><img src="ibis1.png" alt="Ibis Vai voar cedo"></div>
-      <div class="pqm"><img src="ibis2.png" alt="Ibis Boa viagem"></div>
-      <div class="pqm">
-        <iframe src="https://www.youtube.com/embed/rJ40ekISQZY" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="pqm">
-        <iframe src="https://www.youtube.com/embed/ZZoAJHrklfk" allowfullscreen loading="lazy"></iframe>
-      </div>
+      <div class="pqm cover"><img src="ibis1.png" alt="Ibis Vai voar cedo"></div>
+      <div class="pqm cover"><img src="ibis2.png" alt="Ibis Boa viagem"></div>
+      <a class="yt-slot pqm cover" href="https://youtube.com/shorts/rJ40ekISQZY" target="_blank">
+        <img src="https://img.youtube.com/vi/rJ40ekISQZY/mqdefault.jpg" alt="Ibis vídeo 1">
+        <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
+      </a>
+      <a class="yt-slot pqm cover" href="https://youtube.com/shorts/ZZoAJHrklfk" target="_blank">
+        <img src="https://img.youtube.com/vi/ZZoAJHrklfk/mqdefault.jpg" alt="Ibis vídeo 2">
+        <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
+      </a>
     </div>
   </div>
+  <!-- HQZ -->
   <div class="pqc">
     <div>
       <p class="pql-ag">Agência Estação Indoor</p>
@@ -395,12 +405,14 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
       </ul>
     </div>
     <div class="pqr">
-      <div class="pqm"><img src="hqz.png" alt="HQZ Nails"></div>
-      <div class="pqm">
-        <iframe src="https://www.youtube.com/embed/MM5CDlWrXW8" allowfullscreen loading="lazy"></iframe>
-      </div>
+      <div class="pqm cover"><img src="hqz.png" alt="HQZ Nails"></div>
+      <a class="yt-slot pqm cover" href="https://youtube.com/shorts/MM5CDlWrXW8" target="_blank">
+        <img src="https://img.youtube.com/vi/MM5CDlWrXW8/mqdefault.jpg" alt="HQZ vídeo">
+        <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
+      </a>
     </div>
   </div>
+  <!-- JOSÉ PUGAS -->
   <div class="pqc">
     <div>
       <p class="pql-ag">Agência Criei</p>
@@ -411,12 +423,14 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
       </ul>
     </div>
     <div class="pqr">
-      <div class="pqm"><img src="jose.png" alt="José Pugas"></div>
-      <div class="pqm">
-        <iframe src="https://www.youtube.com/embed/wwX4ML5Nzzk" allowfullscreen loading="lazy"></iframe>
-      </div>
+      <div class="pqm cover"><img src="jose.png" alt="José Pugas"></div>
+      <a class="yt-slot pqm cover" href="https://youtube.com/shorts/wwX4ML5Nzzk" target="_blank">
+        <img src="https://img.youtube.com/vi/wwX4ML5Nzzk/mqdefault.jpg" alt="José Pugas vídeo">
+        <div class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg></div>
+      </a>
     </div>
   </div>
+  <!-- INSTITUTO CRISPI -->
   <div class="pqc">
     <div>
       <p class="pql-ag">Freelancer</p>
@@ -429,14 +443,15 @@ footer{background:var(--t);padding:1.25rem 3rem;display:flex;justify-content:spa
       </ul>
     </div>
     <div class="pqr s4">
-      <div class="pqm"><img src="crispi1.png" alt="Instituto Crispi grid"></div>
-      <div class="pqm"><img src="crispi2.png" alt="Instituto Crispi O corpo fala"></div>
-      <div class="pqm"><img src="crispi3.png" alt="Instituto Crispi endometriose peso"></div>
-      <div class="pqm"><span class="pqm-lb"></span></div>
+      <div class="pqm cover"><img src="crispi1.png" alt="Instituto Crispi grid"></div>
+      <div class="pqm cover"><img src="crispi2.png" alt="O corpo fala"></div>
+      <div class="pqm cover"><img src="crispi3.png" alt="Endometriose e peso"></div>
+      <div class="pqm" style="background:rgba(200,168,130,.02)"></div>
     </div>
   </div>
 </div>
 
+<!-- CONTATO -->
 <section class="cta" id="contato">
   <div>
     <p class="eyebrow" style="color:rgba(200,168,130,.5)">Bora trabalhar juntos</p>
